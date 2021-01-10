@@ -22,7 +22,7 @@ public class ArrayUtils {
         static String[][] splitToWords(String fileName) throws FileNotFoundException {
             String[][] words = new String[readLinesFromFile(fileName).length][];
             for (int i = 0; i < readLinesFromFile(fileName).length; i++) {
-                words[i] = readLinesFromFile(fileName)[i].split("(\\s|[,;.!?:()])+");
+                words[i] = readLinesFromFile(fileName)[i].split("(\\s|[,;.!?:()-])+");
             }
             return words;
         }

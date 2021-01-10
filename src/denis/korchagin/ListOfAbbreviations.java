@@ -6,15 +6,15 @@ import java.util.List;
 
 public class ListOfAbbreviations {
     static List<String> createListWithAbbreviations(String inputFile) throws FileNotFoundException {
-        List<String> listWithAbbreviations = new ArrayList<String>() {};
+        List<String> abbreviations = new ArrayList<String>() {};
         for (int i = 0; i < ArrayUtils.splitToWords(inputFile).length; i++) {
             for (int j = 0; j < ArrayUtils.splitToWords(inputFile)[i].length; j++) {
                 if (isAbbreviations(ArrayUtils.splitToWords(inputFile)[i][j])) {
-                    listWithAbbreviations.add(ArrayUtils.splitToWords(inputFile)[i][j]);
+                    abbreviations.add(ArrayUtils.splitToWords(inputFile)[i][j]);
                 }
             }
         }
-        return listWithAbbreviations;
+        return abbreviations;
     }
 
     static boolean isAbbreviations(String word) {
